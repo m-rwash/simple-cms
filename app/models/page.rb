@@ -1,4 +1,5 @@
 class Page < ApplicationRecord
+	has_many :sections
 	belongs_to :subject
-	has_many_and_belongs_to :admin_users
+	has_and_belongs_to_many :admin_users
 end
