@@ -1,0 +1,28 @@
+<% if !flash[:notice].blank? %>
+	<div>
+		<%= flash[:notice] %>
+	</div>
+<%end%>
+<%= link_to("Add new Page", new_page_path) %>
+<div>
+	<table>
+		<tr>
+			<th>#</th>
+			<th>Name</th>
+			<th>Permalink</th>
+			<th>Visible</th>
+		</tr>
+		<% @pages.each do |page| %>
+		<tr>
+			<td><%= page.position %></td>
+			<td><%= page.name %></td>
+			<td><%= page.permalink %></td>
+			<td><%= page.visible ? 'Yes' : 'No'%>
+			</td>
+			<td><%= link_to("Show", page_path(page)) %></td>
+			<td><%= link_to("Edit", edit_page_path(page)) %></td>
+			<td><%= link_to("Delete", delete_page_path(page)) %></td>
+		</tr>
+		<% end %>
+	</table>
+</div>>

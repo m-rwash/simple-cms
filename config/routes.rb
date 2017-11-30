@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   
-  root 'demo#index'
+  get 'pages/index'
+  resources :pages do
+    member do
+      get :delete
+    end
+  end
 
   get 'subjects/index'
-
   resources :subjects do
     member do
       get :delete

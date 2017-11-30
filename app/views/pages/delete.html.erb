@@ -1,0 +1,13 @@
+<%= link_to("<< Back to List", pages_path) %>
+<div>
+	<h2>Delete Page</h2>
+	<%= form_for(@page, :method => 'delete') do |f| %>
+	 	<p>Are you sure you want to delete this page?</p>
+	 	<%= @page.name %>
+
+	 	<div>
+	 		<%= f.submit("Delete Subject") %>
+	 	</div>
+
+	<%end%>
+</div>
