@@ -1,0 +1,30 @@
+<div class="subjects index">
+	<h2>Subjects</h2>
+
+	<%= link_to("Add new Subject", new_subject_path, :class=>'action new') %>
+
+	<table>
+		<tr>
+			<th>#</th>
+			<th>Subject</th>
+			<th>Visible</th>
+			<th>Pages</th>
+			<th>Actions</th>
+		</tr>
+
+		<% @subjects.each do|subject| %>
+		<tr>
+			<td><%= subject.position %></td>
+			<td><%= subject.name %></td>
+			<td><%= subject.visible ? 'YES' : 'NO'%></td>
+			<td><%= subject.pages.size%></td>
+			<td>
+				<%= link_to("Show", {:controller=> 'subjects', :action=>'show', :id=>subject.id}) %>
+				<%= link_to("Edit", edit_subject_path(subject)) %>
+				<%= link_to("Delete", delete_subject_path(subject)) %>
+
+			</td>
+		</tr>
+		<% end %>
+
+	</table>
