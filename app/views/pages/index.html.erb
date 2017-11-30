@@ -8,21 +8,28 @@
 	<table>
 		<tr>
 			<th>#</th>
+			<th>Subject ID</th>
 			<th>Name</th>
 			<th>Permalink</th>
 			<th>Visible</th>
+			<th>Sections</th>
+			<th>Actions</th>
 		</tr>
 		<% @pages.each do |page| %>
 		<tr>
 			<td><%= page.position %></td>
+			<td><%= page.subject_id %></td>
 			<td><%= page.name %></td>
 			<td><%= page.permalink %></td>
 			<td><%= page.visible ? 'Yes' : 'No'%>
+			<td><%= page.sections.size %></td>
 			</td>
-			<td><%= link_to("Show", page_path(page)) %></td>
-			<td><%= link_to("Edit", edit_page_path(page)) %></td>
-			<td><%= link_to("Delete", delete_page_path(page)) %></td>
+			<td>
+				<%= link_to("Show", page_path(page)) %> | 
+				<%= link_to("Edit", edit_page_path(page)) %> | 
+				<%= link_to("Delete", delete_page_path(page)) %>
+			</td>
 		</tr>
 		<% end %>
 	</table>
-</div>>
+</div>

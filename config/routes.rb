@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+
+  #root 'subjects/index'
+  match "/", :to => "subjects#index", :via =>"get"
+
+  get 'sections/index'
+  resources :sections do
+    member do
+      get :delete
+    end
+  end
   
   get 'pages/index'
   resources :pages do
@@ -13,14 +23,5 @@ Rails.application.routes.draw do
       get :delete
     end
   end
-
-
-
-  #match "demo/index", :to => "demo#index", :via => :get
-  #get 'demo/index'
   
-  #match "/", :to => "demo#index", :via =>"get"
-  #root 'demo/index'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

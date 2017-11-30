@@ -1,3 +1,8 @@
+<% if !flash[:notice].blank? %>
+	<div>
+		<%= flash[:notice] %>
+	</div>
+<%end%>
 <div>
 	<%= link_to("<<Back to pages", pages_path) %>
 	<h2>Show Page '<%=@page.name %>'</h2>
@@ -6,6 +11,10 @@
 		<tr>
 			<th>Name</th>
 			<td><%= @page.name %></td>
+		</tr>
+		<tr>
+			<th>Subject ID</th>
+			<td><%= @page.subject_id %></td>
 		</tr>
 		<tr>
 			<th>Permalink</th>

@@ -1,0 +1,30 @@
+<% if !flash[:notice].blank? %>
+	<div>
+		<%= flash[:notice] %>
+	</div>
+<%end%>
+<%= link_to("Add new Section", new_section_path) %>
+<div>
+	<table>
+		<tr>
+			<th>#</th>
+			<th>Page ID</th>
+			<th>Section</th>
+			<th>Visible</th>
+			<th>Actions</th>
+		</tr>
+		<% @sections.each do |section|%>
+		<tr>
+			<td><%= section.position %></td>
+			<td><%= section.page_id %></td>
+			<td><%= section.name %></td>
+			<td><%= section.visible ? 'Yes' : 'No' %></td>
+			<td>
+				<%= link_to("Show", section_path(section)) %> | 
+				<%= link_to("Edit", edit_section_path(section)) %> | 
+				<%= link_to("Delete", delete_section_path(section)) %>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+</div>

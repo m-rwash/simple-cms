@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-    @pages = Page.all
+    @pages = Page.sorted
   end
 
   def show
@@ -13,7 +13,7 @@ class PagesController < ApplicationController
 
   def create
     @page = Page.new(page_params)
-    @page.subject_id = 1
+    #@page.subject_id = 1
     if @page.save
       flash[:notice] = "Page Created Successfully!"
       redirect_to(pages_path)
@@ -50,7 +50,7 @@ class PagesController < ApplicationController
 
   private
   def page_params
-    params.require(:page).permit(:name, :permalink, :position, :visible)
+    params.require(:page).permit(:name, :permalink, :position, :visible, :subject_id)
   end
 
 end
