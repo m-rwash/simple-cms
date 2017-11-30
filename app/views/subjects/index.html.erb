@@ -25,8 +25,9 @@
 			<td><%= subject.visible ? 'YES' : 'NO'%></td>
 			<td><%= subject.pages.size%></td>
 			<td>
-				<%= link_to("Show", {:controller=> 'subjects', :action=>'show', :id=>subject.id}) %>
-				<%= link_to("Edit", edit_subject_path(subject)) %>
+				<%= link_to("View Pages", pages_path(:subject_id => subject.id)) %> | 
+				<%= link_to("Show", {:controller=> 'subjects', :action=>'show', :id=>subject.id}) %> | 
+				<%= link_to("Edit", edit_subject_path(subject)) %> | 
 				<%= link_to("Delete", delete_subject_path(subject)) %>
 
 			</td>

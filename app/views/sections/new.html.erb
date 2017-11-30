@@ -1,7 +1,7 @@
-<%= link_to("<< Back to Section List", sections_path) %>
+<%= link_to("<< Back to Section List", sections_path(:page_id => @page.id)) %>
 
 <div>
-	<%= form_for(@section) do |f| %>
+	<%= form_for(@section, :url => sections_path(:page_id => @page.id)) do |f| %>
 	<table>
 		<tr>
 			<th>Name</th>
