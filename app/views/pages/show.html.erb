@@ -5,7 +5,7 @@
 <%end%>
 
 <div>
-	<%= link_to("<<Back to pages", pages_path(:subject_id => @subject.id)) %>
+	<%= link_to("<<Back to pages", subject_pages_path(@subject)) %>
 	<h2>Show Page '<%=@page.name %>'</h2>
 
 	<table>

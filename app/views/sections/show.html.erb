@@ -3,7 +3,7 @@
 		<%= flash[:notice] %>
 	</div>
 <%end%>
-<%= link_to("Back to Sections List", sections_path) %>
+<%= link_to("Back to Sections List", subject_page_sections_path(@subject, @page)) %>
 
 <div>
 	<h2> Show Section ' <%= @section.name %>'</h2>

@@ -1,6 +1,6 @@
 class SectionsController < ApplicationController
   
-  before_action :find_page
+  before_action :find_page, :find_subject
 
   def index
     @sections = @page.sections.sorted
@@ -19,7 +19,7 @@ class SectionsController < ApplicationController
     #@section.page_id = 2
     if @section.save
       flash[:notice] = "You Created a new Section Successfully!"
-      redirect_to(sections_path(:page_id => @page.id))
+      redirect_to(subject_page_sections_path(@subject, @page))
     else
       render('new')
     end
@@ -33,7 +33,7 @@ class SectionsController < ApplicationController
     @section = Section.find(params[:id])
     if @section.update_attributes(section_params)
       flash[:notice] = "You Updated The Section Successfully!"
-      redirect_to(section_path(@section ,:page_id => @page.id))
+      redirect_to(subject_page_section_path(@subject, @page, @section))
     else
       render('edit')
     end
@@ -47,7 +47,7 @@ class SectionsController < ApplicationController
     @section = Section.find(params[:id])
     @section.destroy
     flash[:notice] = "You Deleted The Section Successfully!"
-    redirect_to(sections_path(:page_id => @page.id))
+    redirect_to(subject_page_sections_path(@subject, @page))
   end
 
   private
@@ -58,5 +58,9 @@ class SectionsController < ApplicationController
 
   def find_page
     @page = Page.find(params[:page_id])
+  end
+
+  def find_subject
+    @subject = Subject.find(params[:subject_id])
   end
 end

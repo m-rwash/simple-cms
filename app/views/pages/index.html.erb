@@ -3,7 +3,10 @@
 		<%= flash[:notice] %>
 	</div>
 <%end%>
-<%= link_to("Add new Page", new_page_path(:subject_id => @subject.id)) %>
+<div>
+	<h2>Pages for subject: <%=@subject.name%></h2>
+</div>
+<%= link_to("Add new Page", new_subject_page_path(@subject)) %>
 <div>
 	<table>
 		<tr>
@@ -25,12 +28,13 @@
 			<td><%= page.sections.size %></td>
 			</td>
 			<td>
-				<%= link_to("View Sections", sections_path(:page_id => page.id)) %> | 
-				<%= link_to("Show", page_path(page, :subject_id => @subject.id)) %> | 
-				<%= link_to("Edit", edit_page_path(page, :subject_id => @subject.id)) %> | 
-				<%= link_to("Delete", delete_page_path(page, :subject_id => @subject.id)) %>
+				<%= link_to("View Sections", subject_page_sections_path(@subject, page)) %> | 
+				<%= link_to("Show", subject_page_path(page, @subject)) %> | 
+				<%= link_to("Edit", edit_subject_page_path(page, @subject)) %> | 
+				<%= link_to("Delete", delete_subject_page_path(page, @subject)) %>
 			</td>
 		</tr>
 		<% end %>
 	</table>
 </div>
+<%= link_to("Back to subjects", subjects_path) %>

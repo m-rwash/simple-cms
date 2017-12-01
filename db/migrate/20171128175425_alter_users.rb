@@ -1,4 +1,5 @@
 class AlterUsers < ActiveRecord::Migration[5.1]
+
   def up
     rename_table("users", "admin_users")
     add_column("admin_users", "username", :string, :limit => 25, :after => "email")
@@ -15,4 +16,5 @@ class AlterUsers < ActiveRecord::Migration[5.1]
     remove_column("admin_users", "username")
     rename_table("admin_users", "users")
   end
+
 end

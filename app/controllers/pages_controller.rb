@@ -19,7 +19,7 @@ class PagesController < ApplicationController
     #@page.subject_id = 1
     if @page.save
       flash[:notice] = "Page Created Successfully!"
-      redirect_to(pages_path(:subject_id => @subject.id))
+      redirect_to(subject_pages_path(@subject))
     else 
       render('new')
     end
@@ -33,7 +33,7 @@ class PagesController < ApplicationController
     @page = Page.find(params[:id])
     if @page.update_attributes(page_params)
       flash[:notice] = "Page Updated Successfully!"
-      redirect_to(page_path(@page, :subject_id => @subject_id))
+      redirect_to(subject_page_path(@page, @subject))
     else 
       render('edit')
     end
@@ -48,7 +48,7 @@ class PagesController < ApplicationController
     @page = Page.find(params[:id])
     @page.destroy
     flash[:notice] = "Page Deleted Successfully!"
-    redirect_to(pages_path(:subject_id => @subject.id))
+    redirect_to(subject_pages_path(@subject))
   end
 
   private
