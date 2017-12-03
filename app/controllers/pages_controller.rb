@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
-  
+  layout 'admin'
+
   before_action :find_subject
 
   def index

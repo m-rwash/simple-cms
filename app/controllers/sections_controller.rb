@@ -1,5 +1,6 @@
 class SectionsController < ApplicationController
   
+  layout 'admin'
   before_action :find_page, :find_subject
 
   def index
