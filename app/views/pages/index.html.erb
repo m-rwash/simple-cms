@@ -20,7 +20,7 @@
 			<td><%= page.subject_id %></td>
 			<td><%= page.name %></td>
 			<td><%= page.permalink %></td>
-			<td><%= page.visible ? 'Yes' : 'No'%>
+			<td><%= status_tag(page.visible)%>
 			<td><%= page.sections.size %></td>
 			</td>
 			<td>
