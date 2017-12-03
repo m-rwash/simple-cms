@@ -19,8 +19,8 @@
 			<td><%= section.name %></td>
 			<td class="center"><%= status_tag(section.visible) %></td>
 			<td class="actions">
-				<%= link_to("Show", subject_page_section_path(@subject, @page ,section), :class => 'action show') %> | 
-				<%= link_to("Edit", edit_subject_page_section_path(@subject, @page ,section), :class => 'action edit') %> | 
+				<%= link_to("Show", subject_page_section_path(@subject, @page ,section), :class => 'action show') %>
+				<%= link_to("Edit", edit_subject_page_section_path(@subject, @page ,section), :class => 'action edit') %>
 				<%= link_to("Delete", delete_subject_page_section_path(@subject, @page ,section), :class => 'action delete') %>
 			</td>
 		</tr>

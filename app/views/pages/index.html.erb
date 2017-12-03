@@ -1,9 +1,8 @@
 <% @page_title = "Pages" %>
 <div class="pages index">
-	<h2>Pages for subject: <%=@subject.name%></h2>
-</div>
-<%= link_to("Add new Page", new_subject_page_path(@subject),:class => 'action new') %>
-<div>
+	<h2>Pages for: <%=@subject.name%></h2>
+	<%= link_to("Add new Page", new_subject_page_path(@subject),:class => 'action new') %>
+
 	<table class="listing" summary="Page list">
 		<tr class="header">
 			<th>#</th>
