@@ -1,9 +1,11 @@
-<% @page_title = "Edit "+@section.name+" Section" %>
-<%= link_to("<< Back to Sections List", subject_page_sections_path(@subject, @page)) %>
+<% @page_title = "Update "+@section.name+" Section" %>
+<%= link_to("<< Back to Sections List", subject_page_sections_path(@subject, @page), :class => 'back-link') %>
 
-<div>
+<div class="sections edit">
 	<%= form_for(@section, :url => subject_page_section_path(@subject, @page, @section)) do |f|%>
 		<%= render(:partial => 'form', :locals => {:f => f}) %>
-		<%= f.submit("Edit Section") %>
+		<div class="form-buttons">
+	      <%= f.submit("Update Section") %>
+	    </div>
 	<% end %>
 </div>

@@ -1,9 +1,9 @@
 <% @page_title = "Subject "+@subject.name %>
-<%= link_to("Back to List", subjects_path) %>
-<div>
+<%= link_to("Back to List", subjects_path, :class => 'back-link') %>
+<div class="subjects show">
 	<h2>Show Subject</h2>
 
-	<table>
+	<table summary="Subject detail view">
 		<tr>
 			<th>Name</th>
 			<td><%= @subject.name %></td>

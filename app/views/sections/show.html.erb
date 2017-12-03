@@ -1,10 +1,10 @@
 <% @page_title = "Section "+@section.name %>
-<%= link_to("Back to Sections List", subject_page_sections_path(@subject, @page)) %>
+<%= link_to("Back to Sections List", subject_page_sections_path(@subject, @page), :class => 'back-link') %>
 
-<div>
+<div class="sections show">
 	<h2> Show Section ' <%= @section.name %>'</h2>
 
-	<table>
+	<table summary="Section detail view">
 		<tr>
 			<th>Name</th>
 			<td><%= @section.name %></td>
@@ -29,5 +29,13 @@
 			<th>Content</th>
 			<td><%= @section.content %></td>
 		</tr>
+		<tr>
+	      <th>Created</th>
+	      <td><%= @section.created_at %></td>
+	    </tr>
+	    <tr>
+	      <th>Updated</th>
+	      <td><%= @section.updated_at %></td>
+	    </tr>
 	</table>
 </div>

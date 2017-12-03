@@ -1,11 +1,11 @@
 <% @page_title = "Pages" %>
-<div>
+<div class="pages index">
 	<h2>Pages for subject: <%=@subject.name%></h2>
 </div>
-<%= link_to("Add new Page", new_subject_page_path(@subject)) %>
+<%= link_to("Add new Page", new_subject_page_path(@subject),:class => 'action new') %>
 <div>
-	<table>
-		<tr>
+	<table class="listing" summary="Page list">
+		<tr class="header">
 			<th>#</th>
 			<th>Subject ID</th>
 			<th>Name</th>
@@ -20,17 +20,16 @@
 			<td><%= page.subject_id %></td>
 			<td><%= page.name %></td>
 			<td><%= page.permalink %></td>
-			<td><%= status_tag(page.visible)%>
-			<td><%= page.sections.size %></td>
+			<td class="center"><%= status_tag(page.visible)%>
+			<td class="center"><%= page.sections.size %></td>
 			</td>
-			<td>
+			<td class="actions">
 				<%= link_to("View Sections", subject_page_sections_path(@subject, page)) %> | 
-				<%= link_to("Show", subject_page_path(page, @subject)) %> | 
-				<%= link_to("Edit", edit_subject_page_path(page, @subject)) %> | 
-				<%= link_to("Delete", delete_subject_page_path(page, @subject)) %>
+				<%= link_to("Show", subject_page_path(page, @subject), :class => 'action show') %> | 
+				<%= link_to("Edit", edit_subject_page_path(page, @subject), :class => 'action edit') %> | 
+				<%= link_to("Delete", delete_subject_page_path(page, @subject), :class => 'action delete') %>
 			</td>
 		</tr>
 		<% end %>
 	</table>
 </div>
-<%= link_to("Back to subjects", subjects_path) %>
