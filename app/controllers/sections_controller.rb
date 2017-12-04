@@ -1,6 +1,8 @@
 class SectionsController < ApplicationController
   
   layout 'admin'
+  
+  before_action :confirm_logged_in
   before_action :find_page, :find_subject
   before_action :find_pages
   before_action :set_sections_count
