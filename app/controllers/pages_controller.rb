@@ -7,7 +7,7 @@ class PagesController < ApplicationController
 
 
   def index
-    @pages = @subject.pages.sorted
+      @pages = @subject.pages.sorted 
   end
 
   def show

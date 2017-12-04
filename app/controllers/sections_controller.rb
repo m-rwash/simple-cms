@@ -6,7 +6,7 @@ class SectionsController < ApplicationController
   before_action :set_sections_count
 
   def index
-    @sections = @page.sections.sorted
+      @sections = @page.sections.sorted
   end
 
   def show
