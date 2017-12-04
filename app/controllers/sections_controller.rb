@@ -2,6 +2,8 @@ class SectionsController < ApplicationController
   
   layout 'admin'
   before_action :find_page, :find_subject
+  before_action :find_pages
+  before_action :set_sections_count
 
   def index
     @sections = @page.sections.sorted
@@ -13,27 +15,20 @@ class SectionsController < ApplicationController
 
   def new
     @section = Section.new(:page_id => @page.id)
-    @sections_count = Section.count + 1
-    @pages = Page.sorted
   end
 
   def create
     @section = Section.new(section_params)
-    #@section.page_id = 2
     if @section.save
       flash[:notice] = "You Created a new Section Successfully!"
       redirect_to(subject_page_sections_path(@subject, @page))
     else
-      @sections_count = Section.count + 1
-      @pages = Page.sorted
       render('new')
     end
   end
 
   def edit
     @section = Section.find(params[:id])
-    @sections_count = Section.count
-    @pages = Page.sorted
   end
 
   def update
@@ -42,8 +37,6 @@ class SectionsController < ApplicationController
       flash[:notice] = "You Updated The Section Successfully!"
       redirect_to(subject_page_section_path(@subject, @page, @section))
     else
-      @sections_count = Section.count
-      @pages = Page.sorted
       render('edit')
     end
   end
@@ -71,5 +64,14 @@ class SectionsController < ApplicationController
 
   def find_subject
     @subject = Subject.find(params[:subject_id])
+  end
+
+  def find_pages
+    @pages = Page.sorted
+  end
+
+  def set_sections_count
+    @sections_count = Section.count
+    @sections_count += 1 if params[:action] == 'new' || params[:action] == 'create'
   end
 end
