@@ -23,9 +23,9 @@
 			<td class="center"><%= page.sections.size %></td>
 			</td>
 			<td class="actions">
-				<%= link_to("View Sections", subject_page_sections_path(@subject, page)) %> | 
-				<%= link_to("Show", subject_page_path(page, @subject), :class => 'action show') %> | 
-				<%= link_to("Edit", edit_subject_page_path(page, @subject), :class => 'action edit') %> | 
+				<%= link_to("View Sections", subject_page_sections_path(@subject, page), :class => 'action show') %>
+				<%= link_to("Show", subject_page_path(page, @subject), :class => 'action show') %>
+				<%= link_to("Edit", edit_subject_page_path(page, @subject), :class => 'action edit') %>
 				<%= link_to("Delete", delete_subject_page_path(page, @subject), :class => 'action delete') %>
 			</td>
 		</tr>

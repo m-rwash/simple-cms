@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Simple CMS: <%= " | #{@page_title}" if @page_title %></title>
+		<title>Simple CMS <%= " | #{@page_title}" if @page_title %></title>
 		<%= stylesheet_link_tag('application', :media => 'all') %>
 	</head>
 	<body>
 		<div id="header">
-			<h2>Simple CMS Admin</h2>
+			<h2>Simple CMS</h2>
 		</div>
 		<div id="main">
+
+			<div id="navigation">
+				<%= render(:partial =>'layouts/navigation', :locals =>{:subjects => @subjects}) %>
+			</div>
 			
 			<div id="content">
 				<%= yield %>

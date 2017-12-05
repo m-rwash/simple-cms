@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'public#index'
 
-  get 'show/:permalink', :to => 'public#show'
+  get 'show/:permalink', :to => 'public#show', :as => 'public_show'
 
   #root 'subjects/index'
   #match "/", :to => "subjects#index", :via =>"get"
