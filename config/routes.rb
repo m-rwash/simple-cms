@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'admin_users_controller/index'
+
+  get 'admin_users_controller/new'
+
+  get 'admin_users_controller/create'
+
+  get 'admin_users_controller/edit'
+
+  get 'admin_users_controller/update'
+
+  get 'admin_users_controller/delete'
+
+  get 'admin_users_controller/destroy'
+
   #root 'subjects/index'
   match "/", :to => "subjects#index", :via =>"get"
 
