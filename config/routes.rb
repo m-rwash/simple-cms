@@ -1,27 +1,23 @@
 Rails.application.routes.draw do
 
-  get 'admin_users_controller/index'
+  root 'public#index'
 
-  get 'admin_users_controller/new'
-
-  get 'admin_users_controller/create'
-
-  get 'admin_users_controller/edit'
-
-  get 'admin_users_controller/update'
-
-  get 'admin_users_controller/delete'
-
-  get 'admin_users_controller/destroy'
+  get 'show/:permalink', :to => 'public#show'
 
   #root 'subjects/index'
-  match "/", :to => "subjects#index", :via =>"get"
+  #match "/", :to => "subjects#index", :via =>"get"
 
   get 'admin', :to => "access#menu"
   get 'access/menu'
   get 'access/login'
   post 'access/attempt_login'
   get 'access/logout'
+
+  resources :admin_users, :except => [:show] do
+    member do
+      get :delete
+    end
+  end
   
   resources :subjects do
     member do
@@ -38,19 +34,5 @@ Rails.application.routes.draw do
       end
     end
   end
-
-  
-  
-  # resources :pages do
-  #   member do
-  #     get :delete
-  #   end
-  # end
-
-  # resources :subjects do
-  #   member do
-  #     get :delete
-  #   end
-  # end
   
 end

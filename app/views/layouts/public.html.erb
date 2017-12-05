@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Simple CMS: <%= " | #{@page_title}" if @page_title %></title>
+		<%= stylesheet_link_tag('application', :media => 'all') %>
+	</head>
+	<body>
+		<div id="header">
+			<h2>Simple CMS Admin</h2>
+		</div>
+		<div id="main">
+			
+			<div id="content">
+				<%= yield %>
+			</div>
+			<div class="clear"></div>
+			
+			<div id="footer">
+				<p id="copyright">MMR</p>
+			</div>
+		</div>
+	</body>
+</html>

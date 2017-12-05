@@ -6,7 +6,7 @@ class AdminUser < ApplicationRecord
 	has_many :section_edits
 	has_many :sections, :through => :section_edits
 
-	scope :sorted, lambda{ order(:last_name => DESC, :first_name => ASC) }
+	scope :sorted, lambda{ order('last_name ASC', 'first_name ASC') }
 
 	EMAIL_REGEX = /\A[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}\Z/i
 
@@ -20,9 +20,7 @@ class AdminUser < ApplicationRecord
               :length => { :maximum => 100 },
               :format => EMAIL_REGEX,
               :confirmation => true
-
-    private
     def name
-    	@admin_user = AdminUser.first_name + " " + AdminUser.last_name
+    	"#{first_name} #{last_name}"
     end
 end
