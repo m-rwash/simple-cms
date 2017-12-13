@@ -6,11 +6,11 @@
 
 ### Data model:
 
-
+![Data Model](https://github.com/m-rwash/simple-cms/blob/master/model.png)
 
 ### Clone and Run on your machine:
 * Clone the application
 * Adjust database.yml
-* Run rake db:create
-* Run rake db:seed
-* Lunch Rails Server rails s
+* Run `rake db:create`
+* Run `rake db:seed`
+* Lunch Rails Server `rails s`
