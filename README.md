@@ -1,24 +1,16 @@
-# README
+## Simple Content Management System implemented in Ruby on Rails.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Rails version: 5.1.4
+### Ruby version: 2.4.2
 
-Things you may want to cover:
 
-* Ruby version
+### Data model:
 
-* System dependencies
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Clone and Run on your machine:
+* Clone the application
+* Adjust database.yml
+* Run rake db:create
+* Run rake db:seed
+* Lunch Rails Server rails s
