@@ -9,8 +9,16 @@
 ![Data Model](https://github.com/m-rwash/simple-cms/blob/master/model.png)
 
 ### Clone and Run on your machine:
-* Clone the application
-* Adjust database.yml
+* Clone the application `https://github.com/m-rwash/simple-cms.git`
+* `cd simple_cms`
+* Adjust `database.yml`
+* `bundle install`
 * Run `rake db:create`
+* Run `rake db:migrate`
 * Run `rake db:seed`
 * Lunch Rails Server `rails s`
+* Run `rails test`
+* Run `rails server`
+* surf `localhost:3000`
+
+
