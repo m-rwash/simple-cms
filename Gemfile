@@ -42,12 +42,16 @@ group :development, :test do
   gem "rspec-rails"
   gem 'guard-rspec', require: false
   gem 'simplecov', :require => false, :group => :test
+  gem 'fabrication'
+  gem 'faker'
 end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'selenium-webdriver'
   gem 'capybara', '~> 2.13'
+  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
+  gem 'rails-controller-testing'
 end
 
 
