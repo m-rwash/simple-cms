@@ -3,5 +3,5 @@ Fabricator(:page) do
   permalink  { Faker::Internet.url }
   position   { Faker::Number.between(1, 10) }
   visible    true
-  subject
+  subject	 { Fabricate(:subject) }
 end

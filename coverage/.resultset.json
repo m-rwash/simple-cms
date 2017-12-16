@@ -45,6 +45,34 @@
         1,
         null
       ],
+      "/home/bonzo/study/lynda/simple_cms/app/models/section.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/bonzo/study/lynda/simple_cms/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
       "/home/bonzo/study/lynda/simple_cms/app/models/page.rb": [
         1,
         null,
@@ -72,11 +100,6 @@
         null,
         null
       ],
-      "/home/bonzo/study/lynda/simple_cms/app/models/application_record.rb": [
-        1,
-        1,
-        null
-      ],
       "/home/bonzo/study/lynda/simple_cms/app/models/subject.rb": [
         1,
         null,
@@ -94,27 +117,10 @@
         1,
         null
       ],
-      "/home/bonzo/study/lynda/simple_cms/app/models/section.rb": [
-        1,
-        null,
-        1,
-        null,
+      "/home/bonzo/study/lynda/simple_cms/app/models/section_edit.rb": [
         1,
         1,
         1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
         null
       ],
       "/home/bonzo/study/lynda/simple_cms/app/models/admin_user.rb": [
@@ -163,12 +169,6 @@
         0
       ],
       "/home/bonzo/study/lynda/simple_cms/app/channels/application_cable/connection.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/bonzo/study/lynda/simple_cms/app/models/section_edit.rb": [
         0,
         0,
         0,
@@ -539,6 +539,6 @@
         0
       ]
     },
-    "timestamp": 1513401607
+    "timestamp": 1513403400
   }
 }
