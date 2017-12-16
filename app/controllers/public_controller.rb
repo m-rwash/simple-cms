@@ -8,10 +8,9 @@ class PublicController < ApplicationController
   end
 
   def show
-  	@page = Page.visible.where(:permalink => params[:permalink]).first
+    @page = Page.where(:permalink => params[:permalink], :visible => true).first
   	if @page.nil?
   		redirect_to(root_path)
-  	else
   	end
   end
 

@@ -1,7 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+if Rails.env.development?
+  begin
+    puts "Adding seed data..."
+
+    subjects = 2.times.map { |n| Fabricate(:subject)}
+    pages 	 = 5.times.map { |n| Fabricate(:page, subject: subjects.sample)}
+    sections = 30.times.map { |n| Fabricate(:section, page: pages.sample) }
+
+    puts "..done!"
+  rescue => e
+    puts e.inspect
+    puts "Something went wrong. Try running `bundle exec rake db:drop db:create db:migrate` first"
+  end
+end

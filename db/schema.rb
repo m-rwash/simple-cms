@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20171204205631) do
     t.index ["page_id"], name: "index_sections_on_page_id"
   end
 
-  create_table "subjects", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "subjects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.integer "position"
     t.boolean "visible", default: false

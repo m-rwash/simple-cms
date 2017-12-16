@@ -8,6 +8,13 @@
 
 ![Data Model](https://github.com/m-rwash/simple-cms/blob/master/model.png)
 
+
+### TODO:
+* Test controllers
+* Test views
+* Pretying it up with bootstrap
+
+
 ### Clone and Run on your machine:
 * Clone the application `https://github.com/m-rwash/simple-cms.git`
 * `cd simple_cms`

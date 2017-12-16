@@ -21,6 +21,7 @@ class SectionsController < ApplicationController
 
   def create
     @section = Section.new(section_params)
+    @section.page_id = @page.id
     if @section.save
       flash[:notice] = "You Created a new Section Successfully!"
       redirect_to(subject_page_sections_path(@subject, @page))
